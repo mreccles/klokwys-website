@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Site</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Coming very very very very soon CAMILLA!!!</h1>
+</body>
+</html>
