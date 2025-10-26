@@ -6,10 +6,10 @@
   <title>About | Klokwys</title>
   <meta name="description" content="How Klokwys plans, engineers, and delivers reliable energy projects.">
   <link rel="icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="/">Klokwys</a>
@@ -21,70 +21,40 @@
     </div>
   </header>
 
-  <!-- Page hero -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <h1>Focused on delivery. Measured by outcomes.</h1>
-        <p class="lead">
-          We engineer and execute energy storage and power projects with a clear bias to reliability, safety, and schedule.
-        </p>
-        <div class="hero-ctas">
-          <a class="btn btn-lg" href="/contact.html">Work with us</a>
-          <a class="btn btn-ghost btn-lg" href="/">View capabilities</a>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="kpi"><div class="kpi-num">10+ yrs</div><div class="kpi-label">combined EPC leadership</div></div>
-        <div class="kpi"><div class="kpi-num">12</div><div class="kpi-label">jurisdictions delivered</div></div>
-        <div class="kpi"><div class="kpi-num">0</div><div class="kpi-label">LTIs recorded</div></div>
+  <!-- HERO -->
+  <section class="hero-surface hero-animated" data-reveal>
+    <div class="container hero-centered">
+      <h1 class="hero-title">KLOKWYS</h1>
+      <p class="hero-subtitle">
+        Focused on delivery. Measured by outcomes. Technical depth with operational rigor.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-lg" href="/contact.html">Work with us</a>
+        <a class="btn btn-ghost btn-lg" href="/">Capabilities</a>
       </div>
     </div>
-    <div class="hero-bg"></div>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
   </section>
 
-  <!-- Mission and approach -->
-  <section class="section bg-alt">
+  <!-- HOW WE WORK -->
+  <section class="section bg-alt" data-reveal="stagger">
     <div class="container">
-      <h2 class="section-title">How we work</h2>
+      <h2 class="section-title">How We Work</h2>
       <div class="grid-3">
-        <article class="card">
-          <h3>Clarity first</h3>
-          <p>Define scope, risks, interfaces, and acceptance tests up front. No ambiguity in deliverables.</p>
-          <ul class="checklist">
-            <li>Owner’s objectives mapped</li>
-            <li>Single source of truth</li>
-            <li>Change control discipline</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Engineering depth</h3>
-          <p>Bankable equipment, code compliant design, protection and controls that withstand real faults.</p>
-          <ul class="checklist">
-            <li>Studies and protection</li>
-            <li>Thermal and fire safety</li>
-            <li>Commissioning plans</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Schedule integrity</h3>
-          <p>Gate based plans from LNTP to COD with measurable progress and accountable owners.</p>
-          <ul class="checklist">
-            <li>FAT and SAT readiness</li>
-            <li>On site QA checks</li>
-            <li>Structured handover</li>
-          </ul>
-        </article>
+        <article class="card"><h3>Clarity first</h3><p>Scope, risks, interfaces, and acceptance tests defined up front.</p></article>
+        <article class="card"><h3>Engineering depth</h3><p>Studies, protection, thermal and fire safety, commissioning plans.</p></article>
+        <article class="card"><h3>Schedule integrity</h3><p>Gate-based plans from LNTP to COD with accountable owners.</p></article>
       </div>
     </div>
   </section>
 
-  <!-- Timeline -->
-  <section class="section">
+  <!-- TIMELINE -->
+  <section class="section" data-reveal>
     <div class="container">
-      <h2 class="section-title">Project timeline</h2>
-      <div class="card" style="overflow:hidden">
-        <ol class="bullet-list" style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0">
+      <h2 class="section-title">Project Timeline</h2>
+      <div class="card timeline">
+        <ol>
           <li><strong>01 Discovery</strong> requirements, constraints, interconnect</li>
           <li><strong>02 Concept</strong> single line, layout, risks</li>
           <li><strong>03 Design</strong> IFC packages, studies, permits</li>
@@ -98,40 +68,6 @@
     </div>
   </section>
 
-  <!-- Team -->
-  <section class="section bg-tint">
-    <div class="container">
-      <h2 class="section-title">Team</h2>
-      <div class="grid-3">
-        <article class="card">
-          <h3>Project Delivery</h3>
-          <p>PMs who hold scope, schedule, and cost with real field experience.</p>
-        </article>
-        <article class="card">
-          <h3>Electrical Engineering</h3>
-          <p>Protection, controls, and EMS integration that survive edge cases.</p>
-        </article>
-        <article class="card">
-          <h3>Construction</h3>
-          <p>Site leadership that clears blockers and keeps crews safe and productive.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Values -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Values</h2>
-      <div class="grid-3">
-        <article class="card"><h3>Safety</h3><p>Design and execution that protect people and assets.</p></article>
-        <article class="card"><h3>Accountability</h3><p>Clear owners, single source of truth, measurable outcomes.</p></article>
-        <article class="card"><h3>Transparency</h3><p>Open communication, documented decisions, honest tradeoffs.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
@@ -146,6 +82,6 @@
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>
