@@ -4,13 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Klokwys | Reliable Energy Solutions</title>
-  <meta name="description" content="Klokwys provides engineering, EPC, and energy storage solutions built for reliability and scale.">
+  <meta name="description" content="Engineering, EPC, and energy storage solutions built for reliability and scale.">
   <link rel="icon" href="/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
-  <style>
-    html { overflow-y: scroll; }
-  </style>
+  <style>html{overflow-y:scroll}</style>
 </head>
 <body>
   <!-- HEADER -->
@@ -26,14 +24,14 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero-surface hero-animated">
+  <section class="hero-surface hero-animated" data-reveal>
     <div class="container hero-centered">
-      <h1 class="hero-title anim-fade-up">KLOKWYS</h1>
-      <p class="hero-subtitle anim-fade-up anim-delay-1">
-        Focused on delivery. Measured by outcomes.  
+      <h1 class="hero-title">KLOKWYS</h1>
+      <p class="hero-subtitle">
+        Focused on delivery. Measured by outcomes.
         <br>Reliable engineering, disciplined execution, and energy systems that perform every cycle.
       </p>
-      <div class="hero-ctas anim-fade-up anim-delay-2">
+      <div class="hero-ctas">
         <a class="btn btn-lg" href="/contact.html">Start a project</a>
         <a class="btn btn-ghost btn-lg" href="/about.html">Learn more</a>
       </div>
@@ -43,40 +41,37 @@
   </section>
 
   <!-- SERVICES -->
-  <section class="section bg-alt">
+  <section class="section bg-alt" data-reveal="stagger">
     <div class="container">
       <h2 class="section-title">What We Do</h2>
       <div class="grid-3">
-        <article class="card anim-card">
-          <h3>Battery Energy Storage</h3>
-          <p>End-to-end engineering with validated OEMs, safety-first architecture, and robust control systems.</p>
-        </article>
-        <article class="card anim-card">
-          <h3>Project Delivery</h3>
-          <p>Gate-based execution, FAT/SAT coverage, and milestone discipline from LNTP to COD.</p>
-        </article>
-        <article class="card anim-card">
-          <h3>Commercial Clarity</h3>
-          <p>Transparent contracts, tracked deliverables, and risk registers that protect project outcomes.</p>
-        </article>
+        <article class="card"><h3>Battery Energy Storage</h3><p>End-to-end engineering with validated OEMs, safety-first architecture, robust controls.</p></article>
+        <article class="card"><h3>Project Delivery</h3><p>Gate-based execution, FAT to SAT, structured handover from LNTP to COD.</p></article>
+        <article class="card"><h3>Commercial Clarity</h3><p>Transparent contracts, tracked deliverables, risk registers that protect outcomes.</p></article>
       </div>
     </div>
   </section>
 
   <!-- STATS -->
-  <section class="section">
+  <section class="section" data-reveal>
     <div class="container">
       <div class="proof">
         <div class="proof-stat">
-          <div class="proof-num">250+ MWh</div>
+          <div class="proof-num">
+            <span class="count" data-target="250" data-prefix="" data-suffix="+ MWh" data-start="1" data-duration="1200">0</span>
+          </div>
           <div class="proof-cap">Pipeline Supported</div>
         </div>
         <div class="proof-stat">
-          <div class="proof-num">12</div>
+          <div class="proof-num">
+            <span class="count" data-target="12" data-prefix="" data-suffix="" data-start="1" data-duration="1000">0</span>
+          </div>
           <div class="proof-cap">Jurisdictions Delivered</div>
         </div>
         <div class="proof-stat">
-          <div class="proof-num">0</div>
+          <div class="proof-num">
+            <span class="count" data-target="0" data-prefix="" data-suffix="" data-start="0" data-duration="800">0</span>
+          </div>
           <div class="proof-cap">Lost-Time Incidents</div>
         </div>
       </div>
@@ -84,9 +79,9 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta">
+  <section class="cta" data-reveal>
     <div class="container cta-inner">
-      <h2>Ready to De-Risk Your Project?</h2>
+      <h2>Ready to De-Risk Your Project</h2>
       <p>Send scope and constraints for a clear path to interconnection and COD.</p>
       <a class="btn btn-lg btn-contrast" href="/contact.html">Contact</a>
     </div>
@@ -107,8 +102,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
