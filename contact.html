@@ -4,14 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Contact | Klokwys</title>
-  <meta name="description" content="Get in touch with Klokwys for engineering services and energy storage projects.">
+  <meta name="description" content="Get in touch with Klokwys for energy storage and engineering services.">
   <link rel="icon" href="/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
-  <style>html{overflow-y:scroll}</style>
 </head>
 <body>
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="/">Klokwys</a>
@@ -23,44 +22,44 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero-surface hero-animated">
+  <!-- HERO (unique contact banner) -->
+  <section class="hero-contact hero-animated" data-reveal>
     <div class="container hero-centered">
-      <h1 class="hero-title anim-fade-up">Contact</h1>
-      <p class="hero-subtitle anim-fade-up anim-delay-1">
-        Send scope, timeline, and site constraints. Receive a clear path to COD.
+      <h1 class="hero-title">Contact Klokwys</h1>
+      <p class="hero-subtitle">
+        Let’s talk about your energy storage or infrastructure project.  
+        Send scope, site, and target COD to start a structured conversation.
       </p>
     </div>
     <div class="bg-orb orb-a"></div>
     <div class="bg-orb orb-b"></div>
   </section>
 
-  <!-- Contact content -->
-  <section class="section">
+  <!-- CONTACT SECTION -->
+  <section class="section" data-reveal="stagger">
     <div class="container contact-grid">
-      <!-- Form card -->
+      <!-- FORM -->
       <article class="card contact-card">
-        <h2 style="margin-top:0">Start a conversation</h2>
-        <!-- Netlify Forms -->
+        <h2 style="margin-top:0">Start a Conversation</h2>
         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form">
           <input type="hidden" name="form-name" value="contact">
           <p class="hidden">
-            <label>Don’t fill this <input name="bot-field"></label>
+            <label>Don’t fill this: <input name="bot-field"></label>
           </p>
 
           <div class="form-row">
             <label for="name">Name</label>
-            <input id="name" name="name" autocomplete="name" required>
+            <input id="name" name="name" required>
           </div>
 
           <div class="form-row">
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
+            <input id="email" name="email" type="email" required>
           </div>
 
           <div class="form-row">
             <label for="company">Company</label>
-            <input id="company" name="company" autocomplete="organization">
+            <input id="company" name="company">
           </div>
 
           <div class="form-row">
@@ -74,31 +73,31 @@
           </div>
 
           <div class="form-actions">
-            <button class="btn btn-lg" type="submit">Send</button>
+            <button class="btn btn-lg" type="submit">Send Message</button>
           </div>
 
-          <p class="form-note">You’ll receive a confirmation email if delivery succeeds.</p>
+          <p class="form-note">This form is powered by Netlify Forms.</p>
         </form>
       </article>
 
-      <!-- Info card -->
+      <!-- INFO -->
       <aside class="card contact-info">
-        <h3 style="margin-top:0">Direct</h3>
+        <h3 style="margin-top:0">Direct Contact</h3>
         <p>Email: <a href="mailto:info@klokwys.com">info@klokwys.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com" target="_blank" rel="noopener">Company profile</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com" target="_blank" rel="noopener">Company Profile</a></p>
 
-        <h3>Typical details to include</h3>
+        <h3>Typical Details to Include</h3>
         <ul class="checklist">
-          <li>Site location and interconnect</li>
-          <li>Target COD window</li>
-          <li>Use case and capacity</li>
-          <li>Constraints and risks</li>
+          <li>Site location & interconnect</li>
+          <li>Target COD or schedule</li>
+          <li>Use case & capacity</li>
+          <li>Constraints & risks</li>
         </ul>
       </aside>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
@@ -113,6 +112,6 @@
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>
