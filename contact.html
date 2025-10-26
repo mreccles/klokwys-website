@@ -4,26 +4,115 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Contact | Klokwys</title>
+  <meta name="description" content="Get in touch with Klokwys for engineering services and energy storage projects.">
+  <link rel="icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/main.css">
+  <style>html{overflow-y:scroll}</style>
 </head>
 <body>
-  <header class="container">
-    <a href="/" class="logo">Klokwys</a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">Klokwys</a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html" class="btn btn-sm">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <h1>Contact Us</h1>
-    <p>Email: <a href="mailto:info@klokwys.com">info@klokwys.com</a></p>
-  </main>
+  <!-- Hero -->
+  <section class="hero-surface hero-animated">
+    <div class="container hero-centered">
+      <h1 class="hero-title anim-fade-up">Contact</h1>
+      <p class="hero-subtitle anim-fade-up anim-delay-1">
+        Send scope, timeline, and site constraints. Receive a clear path to COD.
+      </p>
+    </div>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+  </section>
 
-  <footer class="container">
-    <small>© <span id="y"></span> Klokwys</small>
+  <!-- Contact content -->
+  <section class="section">
+    <div class="container contact-grid">
+      <!-- Form card -->
+      <article class="card contact-card">
+        <h2 style="margin-top:0">Start a conversation</h2>
+        <!-- Netlify Forms -->
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hidden">
+            <label>Don’t fill this <input name="bot-field"></label>
+          </p>
+
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="form-row">
+            <label for="company">Company</label>
+            <input id="company" name="company" autocomplete="organization">
+          </div>
+
+          <div class="form-row">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" required>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-lg" type="submit">Send</button>
+          </div>
+
+          <p class="form-note">You’ll receive a confirmation email if delivery succeeds.</p>
+        </form>
+      </article>
+
+      <!-- Info card -->
+      <aside class="card contact-info">
+        <h3 style="margin-top:0">Direct</h3>
+        <p>Email: <a href="mailto:info@klokwys.com">info@klokwys.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com" target="_blank" rel="noopener">Company profile</a></p>
+
+        <h3>Typical details to include</h3>
+        <ul class="checklist">
+          <li>Site location and interconnect</li>
+          <li>Target COD window</li>
+          <li>Use case and capacity</li>
+          <li>Constraints and risks</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Klokwys</div>
+        <small>© <span id="y"></span> Klokwys. All rights reserved.</small>
+      </div>
+      <nav class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
   </footer>
-  <script src="/assets/js/main.js"></script>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
