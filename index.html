@@ -1,107 +1,842 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Klokwys | Reliable Energy Solutions</title>
-  <meta name="description" content="Engineering, EPC, and energy storage solutions built for reliability and scale.">
-  <link rel="icon" href="/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <style>html{overflow-y:scroll}</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klokwys — Focused on delivery. Measured by outcomes.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+
+    /* ── Hero ── */
+    .hero-bg {
+      background:
+        radial-gradient(ellipse 75% 55% at 50% 15%, rgba(6,100,148,0.45) 0%, transparent 65%),
+        linear-gradient(180deg,
+          #010812 0%,
+          #020d20 20%,
+          #030f28 40%,
+          #020b1c 65%,
+          #01060f 85%,
+          #000000 100%
+        );
+    }
+    .hero-fade {
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(255,255,255,0.06) 65%,
+        rgba(220,235,255,0.28) 82%,
+        rgba(240,247,255,0.68) 93%,
+        #ffffff 100%
+      );
+    }
+
+    /* ── Dashboard glow ── */
+    .dash-glow {
+      box-shadow: 0 0 55px 12px rgba(14,165,233,0.28), 0 0 110px 35px rgba(6,100,148,0.18);
+    }
+
+    /* ── Feature blobs ── */
+    .feature-blob {
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px;
+    }
+
+    /* ── Value cards ── */
+    .card-dark {
+      background: linear-gradient(135deg, #0d1b2a 0%, #1a2e42 50%, #0a1828 100%);
+    }
+    .card-teal {
+      background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0a3d5c 100%);
+    }
+
+    /* ── Geo pattern ── */
+    .geo-lines {
+      background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='0.8'%3E%3Cpath d='M0 60 L60 0 L120 60 L60 120 Z'/%3E%3Cpath d='M-30 60 L60 -30 L150 60 L60 150 Z'/%3E%3Cpath d='M15 60 L60 15 L105 60 L60 105 Z'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 120px 120px;
+    }
+
+    /* ── Stat number ── */
+    .stat-num {
+      font-size: 48px; font-weight: 800; line-height: 1;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* ── Contact wave animation ── */
+    @keyframes wave-drift {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .contact-wave-wrap {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 80px;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .contact-wave {
+      display: block;
+      width: 200%; height: 100%;
+      animation: wave-drift 18s linear infinite;
+      opacity: 0.07;
+    }
+    .contact-wave-2 {
+      display: block;
+      width: 200%; height: 100%;
+      animation: wave-drift 26s linear infinite reverse;
+      opacity: 0.04;
+      position: absolute; bottom: 0; left: 0;
+    }
+
+    /* ── Primary button ── */
+    .btn-primary { background: #0ea5e9; color: #fff; }
+    .btn-dark    { background: #0f172a; color: #fff; }
+
+    /* ── Hover underline for nav ── */
+    nav a:hover { color: #0ea5e9; }
+
+    /* ── Timeline stage ── */
+    .stage-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: #0ea5e9; flex-shrink: 0; margin-top: 3px;
+    }
+  </style>
 </head>
-<body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="/">Klokwys</a>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html" class="btn btn-sm">Contact</a>
-      </nav>
-    </div>
-  </header>
+<body class="bg-white">
 
-  <!-- HERO -->
-  <section class="hero-surface hero-animated" data-reveal>
-    <div class="container hero-centered">
-      <h1 class="hero-title">KLOKWYS</h1>
-      <p class="hero-subtitle">
-        Focused on delivery. Measured by outcomes.
-        <br>Reliable engineering, disciplined execution, and energy systems that perform every cycle.
+<!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+<nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex items-center justify-between h-13" style="height:52px">
+
+      <!-- Logo -->
+      <a href="#" class="text-gray-900 font-bold text-lg tracking-tight mr-10" style="letter-spacing:-0.4px">
+        klokwys
+      </a>
+
+      <!-- Nav links -->
+      <div class="hidden md:flex items-center gap-7 flex-1">
+        <a href="#" class="text-xs text-gray-500 transition-colors">Home</a>
+        <a href="#about" class="text-xs text-gray-500 transition-colors">About</a>
+        <a href="#services" class="text-xs text-gray-500 transition-colors">Services</a>
+        <a href="#process" class="text-xs text-gray-500 transition-colors">Process</a>
+        <a href="#contact" class="text-xs text-gray-500 transition-colors">Contact</a>
+      </div>
+
+      <!-- CTA -->
+      <a href="#contact" class="btn-primary text-xs px-4 py-2 rounded-full flex items-center gap-1.5 font-semibold transition-all hover:opacity-90">
+        Start a Project
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section class="hero-bg text-white relative overflow-hidden pt-20 pb-28" id="home">
+
+  <!-- Floating battery/energy shapes — left -->
+  <div class="absolute left-0 top-0 w-[22%] h-full pointer-events-none">
+    <!-- Tall battery module -->
+    <div style="position:absolute; top:8%; left:12%; width:52px; height:90px; border-radius:10px;
+      background:linear-gradient(160deg,#0c4a6e,#0369a1); opacity:0.45;
+      transform:rotate(-12deg) perspective(600px) rotateY(22deg);
+      box-shadow:0 8px 28px rgba(14,165,233,0.35); filter:blur(0.5px)"></div>
+    <!-- Wide pack -->
+    <div style="position:absolute; top:36%; left:4%; width:100px; height:52px; border-radius:10px;
+      background:linear-gradient(135deg,#0f766e,#0d9488); opacity:0.38;
+      transform:rotate(-16deg) perspective(600px) rotateY(18deg);
+      box-shadow:0 8px 22px rgba(13,148,136,0.3); filter:blur(1px)"></div>
+    <!-- Small cube -->
+    <div style="position:absolute; top:62%; left:18%; width:64px; height:64px; border-radius:12px;
+      background:linear-gradient(135deg,#1e3a5f,#1e40af); opacity:0.42;
+      transform:rotate(-20deg) perspective(600px) rotateY(15deg);
+      box-shadow:0 8px 24px rgba(30,64,175,0.4); filter:blur(1.5px)"></div>
+  </div>
+
+  <!-- Floating shapes — right -->
+  <div class="absolute right-0 top-0 w-[22%] h-full pointer-events-none">
+    <div style="position:absolute; top:6%; right:8%; width:52px; height:90px; border-radius:10px;
+      background:linear-gradient(160deg,#0369a1,#0284c7); opacity:0.45;
+      transform:rotate(14deg) perspective(600px) rotateY(-20deg);
+      box-shadow:0 8px 28px rgba(14,165,233,0.35); filter:blur(0.5px)"></div>
+    <div style="position:absolute; top:34%; right:3%; width:96px; height:50px; border-radius:10px;
+      background:linear-gradient(135deg,#065f46,#059669); opacity:0.38;
+      transform:rotate(18deg) perspective(600px) rotateY(-15deg);
+      box-shadow:0 8px 22px rgba(5,150,105,0.3); filter:blur(1px)"></div>
+    <div style="position:absolute; top:60%; right:14%; width:64px; height:64px; border-radius:12px;
+      background:linear-gradient(135deg,#1e3a8a,#1d4ed8); opacity:0.42;
+      transform:rotate(22deg) perspective(600px) rotateY(-18deg);
+      box-shadow:0 8px 24px rgba(29,78,216,0.4); filter:blur(1.5px)"></div>
+  </div>
+
+  <!-- Centre radial glow -->
+  <div class="absolute inset-0 pointer-events-none"
+       style="background:radial-gradient(ellipse 55% 45% at 50% 28%, rgba(14,165,233,0.22) 0%, transparent 68%)"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-3xl mx-auto px-4 text-center">
+
+    <!-- Eyebrow -->
+    <div class="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full border border-white border-opacity-15 bg-white bg-opacity-5">
+      <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+      <span class="text-xs text-gray-400 font-medium">Battery Energy Storage &amp; EPC Delivery</span>
+    </div>
+
+    <h1 class="text-4xl md:text-5xl leading-tight mb-5" style="font-family:'DM Serif Display',serif; font-weight:400; letter-spacing:-0.01em;">
+      Focused on delivery.<br>Measured by outcomes.
+    </h1>
+    <p class="text-sm text-gray-400 mb-10 max-w-sm mx-auto leading-relaxed">
+      Reliable engineering, disciplined execution, and energy systems that perform every cycle.
+    </p>
+
+    <!-- BESS Monitoring Dashboard -->
+    <div class="max-w-xl mx-auto mb-9 dash-glow rounded-xl overflow-hidden border border-white border-opacity-10">
+
+      <!-- Chrome bar -->
+      <div class="flex items-center gap-2 px-3 py-2" style="background:rgba(15,23,42,0.85)">
+        <div class="flex gap-1.5">
+          <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+          <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+          <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+        </div>
+        <div class="flex-1 rounded-md px-3 py-0.5 text-xs text-gray-400 text-center mx-3"
+             style="background:rgba(255,255,255,0.06)">klokwys.com / monitor</div>
+      </div>
+
+      <!-- Dashboard body -->
+      <div class="relative" style="background:linear-gradient(160deg,#020f20 0%,#040d18 50%,#020810 100%); min-height:210px">
+        <div class="absolute inset-0"
+             style="background:radial-gradient(ellipse 65% 75% at 38% 55%, rgba(14,165,233,0.3) 0%, transparent 65%)"></div>
+
+        <div class="relative z-10 p-6">
+          <!-- Top row -->
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <p class="text-xs text-sky-400 font-semibold mb-0.5 uppercase tracking-widest">System Status</p>
+              <p class="text-2xl font-bold text-white">Online &amp; Charging</p>
+            </div>
+            <!-- Live indicator -->
+            <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-green-500 border-opacity-40"
+                 style="background:rgba(5,150,105,0.15)">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+              <span class="text-xs text-green-400 font-medium">Live</span>
+            </div>
+          </div>
+
+          <!-- Metrics row -->
+          <div class="grid grid-cols-4 gap-3 mb-4">
+            <div style="background:rgba(255,255,255,0.05); border-radius:8px; padding:10px">
+              <p class="text-xs text-gray-500 mb-1">State of Charge</p>
+              <p class="text-base font-bold text-white">87<span class="text-xs text-gray-400 font-normal">%</span></p>
+            </div>
+            <div style="background:rgba(255,255,255,0.05); border-radius:8px; padding:10px">
+              <p class="text-xs text-gray-500 mb-1">Power Output</p>
+              <p class="text-base font-bold text-white">4.2<span class="text-xs text-gray-400 font-normal"> MW</span></p>
+            </div>
+            <div style="background:rgba(255,255,255,0.05); border-radius:8px; padding:10px">
+              <p class="text-xs text-gray-500 mb-1">Capacity</p>
+              <p class="text-base font-bold text-white">20<span class="text-xs text-gray-400 font-normal"> MWh</span></p>
+            </div>
+            <div style="background:rgba(255,255,255,0.05); border-radius:8px; padding:10px">
+              <p class="text-xs text-gray-500 mb-1">Uptime</p>
+              <p class="text-base font-bold text-green-400">99.8<span class="text-xs font-normal">%</span></p>
+            </div>
+          </div>
+
+          <!-- Progress bar / charge viz -->
+          <div>
+            <div class="flex justify-between text-xs text-gray-500 mb-1.5">
+              <span>Charge Cycle Progress</span><span>87%</span>
+            </div>
+            <div style="height:5px; background:rgba(255,255,255,0.08); border-radius:99px; overflow:hidden">
+              <div style="height:100%; width:87%; background:linear-gradient(90deg,#0ea5e9,#38bdf8); border-radius:99px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTAs -->
+    <div class="flex items-center justify-center gap-3">
+      <a href="#contact" class="btn-primary text-xs px-5 py-2.5 rounded-full font-semibold flex items-center gap-2 hover:opacity-90 transition-all">
+        Start a Project
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <a href="#about" class="text-white text-xs px-5 py-2.5 rounded-full font-medium flex items-center gap-2 transition-all"
+         style="border:1px solid rgba(255,255,255,0.18); background:rgba(255,255,255,0.07)">
+        Learn More
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom fade -->
+  <div class="hero-fade absolute bottom-0 left-0 right-0 pointer-events-none" style="height:130px"></div>
+</section>
+
+<!-- ═══════════════════════ SERVICES ═══════════════════════ -->
+<section class="bg-white pt-20 pb-16" id="services">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="text-center mb-14">
+      <p class="text-xs text-sky-500 font-semibold uppercase tracking-widest mb-2">What We Deliver</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-3">End-to-end energy project services</h2>
+      <p class="text-sm text-gray-500 max-w-xs mx-auto leading-relaxed">
+        From front-end engineering to final commissioning — scope managed, schedule held.
       </p>
-      <div class="hero-ctas">
-        <a class="btn btn-lg" href="/contact.html">Start a project</a>
-        <a class="btn btn-ghost btn-lg" href="/about.html">Learn more</a>
-      </div>
     </div>
-    <div class="bg-orb orb-a"></div>
-    <div class="bg-orb orb-b"></div>
-  </section>
 
-  <!-- SERVICES -->
-  <section class="section bg-alt" data-reveal="stagger">
-    <div class="container">
-      <h2 class="section-title">What We Do</h2>
-      <div class="grid-3">
-        <article class="card"><h3>Battery Energy Storage</h3><p>End-to-end engineering with validated OEMs, safety-first architecture, robust controls.</p></article>
-        <article class="card"><h3>Project Delivery</h3><p>Gate-based execution, FAT to SAT, structured handover from LNTP to COD.</p></article>
-        <article class="card"><h3>Commercial Clarity</h3><p>Transparent contracts, tracked deliverables, risk registers that protect outcomes.</p></article>
-      </div>
-    </div>
-  </section>
+    <!-- Three service panels + visual -->
+    <div class="relative flex items-end justify-center gap-5">
 
-  <!-- STATS -->
-  <section class="section" data-reveal>
-    <div class="container">
-      <div class="proof">
-        <div class="proof-stat">
-          <div class="proof-num">
-            <span class="count" data-target="250" data-prefix="" data-suffix="+ MWh" data-start="1" data-duration="1200">0</span>
+      <!-- Left floating equipment images -->
+      <div style="position:absolute; left:-10px; bottom:20px; z-index:10">
+        <!-- BESS container box -->
+        <div style="width:120px; height:75px; border-radius:12px;
+          background:linear-gradient(135deg,#0c4a6e,#0369a1);
+          transform:rotate(-9deg); box-shadow:0 8px 28px rgba(14,165,233,0.35);
+          position:relative; z-index:2; display:flex; align-items:center; justify-content:center">
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:3px; padding:10px">
+            <div style="width:12px;height:20px;background:rgba(255,255,255,0.3);border-radius:2px"></div>
+            <div style="width:12px;height:20px;background:rgba(255,255,255,0.4);border-radius:2px"></div>
+            <div style="width:12px;height:20px;background:rgba(255,255,255,0.25);border-radius:2px"></div>
+            <div style="width:12px;height:20px;background:rgba(255,255,255,0.35);border-radius:2px"></div>
           </div>
-          <div class="proof-cap">Pipeline Supported</div>
         </div>
-        <div class="proof-stat">
-          <div class="proof-num">
-            <span class="count" data-target="12" data-prefix="" data-suffix="" data-start="1" data-duration="1000">0</span>
-          </div>
-          <div class="proof-cap">Jurisdictions Delivered</div>
-        </div>
-        <div class="proof-stat">
-          <div class="proof-num">
-            <span class="count" data-target="0" data-prefix="" data-suffix="" data-start="0" data-duration="800">0</span>
-          </div>
-          <div class="proof-cap">Lost-Time Incidents</div>
+        <!-- Power inverter box -->
+        <div style="width:120px; height:75px; border-radius:12px;
+          background:linear-gradient(135deg,#065f46,#059669);
+          transform:rotate(6deg); margin-top:-16px; margin-left:20px;
+          box-shadow:0 8px 24px rgba(5,150,105,0.3);
+          position:relative; z-index:3; display:flex; align-items:center; justify-content:center">
+          <svg style="width:32px;height:32px;color:rgba(255,255,255,0.6)" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+          </svg>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="cta" data-reveal>
-    <div class="container cta-inner">
-      <h2>Ready to De-Risk Your Project</h2>
-      <p>Send scope and constraints for a clear path to interconnection and COD.</p>
-      <a class="btn btn-lg btn-contrast" href="/contact.html">Contact</a>
-    </div>
-  </section>
+      <!-- Main services panel (browser-style) -->
+      <div style="width:62%; border-radius:12px; overflow:hidden; border:1px solid #e5e7eb; box-shadow:0 4px 24px rgba(0,0,0,0.07)">
+        <!-- Chrome -->
+        <div style="background:#f3f4f6; padding:8px 12px; display:flex; align-items:center; gap:8px; border-bottom:1px solid #e5e7eb">
+          <div style="display:flex; gap:6px">
+            <div style="width:10px;height:10px;border-radius:50%;background:#f87171"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#fbbf24"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#4ade80"></div>
+          </div>
+          <div style="flex:1;background:white;border-radius:4px;border:1px solid #e5e7eb;padding:2px 10px;font-size:10px;color:#9ca3af;margin:0 8px">klokwys.com / services</div>
+        </div>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <div class="logo">Klokwys</div>
-        <small>© <span id="y"></span> Klokwys. All rights reserved.</small>
+        <!-- Service cards inside -->
+        <div style="background:white; display:flex; height:260px">
+          <!-- Sidebar nav -->
+          <div style="width:115px;background:#f9fafb;border-right:1px solid #f3f4f6;padding:14px 10px;flex-shrink:0">
+            <div style="font-size:11px;font-weight:700;color:#0ea5e9;margin-bottom:12px">KLOKWYS</div>
+            <div style="display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:6px;background:#f0f9ff;margin-bottom:2px">
+              <div style="width:7px;height:7px;border-radius:50%;background:#0ea5e9"></div>
+              <span style="font-size:10px;color:#0369a1;font-weight:500">BESS</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:6px;margin-bottom:2px">
+              <div style="width:7px;height:7px;border-radius:50%;background:#d1d5db"></div>
+              <span style="font-size:10px;color:#9ca3af">Delivery</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:6px;margin-bottom:2px">
+              <div style="width:7px;height:7px;border-radius:50%;background:#d1d5db"></div>
+              <span style="font-size:10px;color:#9ca3af">Commercial</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:6px">
+              <div style="width:7px;height:7px;border-radius:50%;background:#d1d5db"></div>
+              <span style="font-size:10px;color:#9ca3af">Reports</span>
+            </div>
+          </div>
+
+          <!-- Main panel -->
+          <div style="flex:1;padding:16px;overflow:hidden">
+            <!-- Header card -->
+            <div style="border-radius:10px;padding:14px;margin-bottom:12px;background:linear-gradient(135deg,#0c4a6e,#0369a1);color:white">
+              <div style="font-size:9px;color:#bae6fd;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.08em">Active Project</div>
+              <div style="font-size:18px;font-weight:700">20 MWh BESS</div>
+              <div style="margin-top:8px;display:flex;gap:6px">
+                <div style="font-size:9px;background:rgba(255,255,255,0.15);padding:3px 8px;border-radius:4px">COD: Q3 2025</div>
+                <div style="font-size:9px;background:rgba(5,150,105,0.3);padding:3px 8px;border-radius:4px;color:#6ee7b7">On Schedule</div>
+              </div>
+            </div>
+            <!-- Stats row -->
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px">
+              <div style="background:#f9fafb;border-radius:8px;padding:8px">
+                <div style="font-size:9px;color:#9ca3af;margin-bottom:2px">EPC Phase</div>
+                <div style="font-size:12px;font-weight:600;color:#1f2937">Build</div>
+              </div>
+              <div style="background:#f9fafb;border-radius:8px;padding:8px">
+                <div style="font-size:9px;color:#9ca3af;margin-bottom:2px">Open RFIs</div>
+                <div style="font-size:12px;font-weight:600;color:#1f2937">3</div>
+              </div>
+              <div style="background:#f9fafb;border-radius:8px;padding:8px">
+                <div style="font-size:9px;color:#9ca3af;margin-bottom:2px">LTI</div>
+                <div style="font-size:12px;font-weight:600;color:#059669">0</div>
+              </div>
+            </div>
+            <!-- Milestone list -->
+            <div style="display:flex;flex-direction:column;gap:0">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #f9fafb">
+                <div style="display:flex;align-items:center;gap:6px">
+                  <div style="width:7px;height:7px;border-radius:50%;background:#4ade80"></div>
+                  <span style="font-size:10px;color:#4b5563">FAT Completed</span>
+                </div>
+                <span style="font-size:10px;font-weight:500;color:#059669">Done</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #f9fafb">
+                <div style="display:flex;align-items:center;gap:6px">
+                  <div style="width:7px;height:7px;border-radius:50%;background:#0ea5e9"></div>
+                  <span style="font-size:10px;color:#4b5563">Site Installation</span>
+                </div>
+                <span style="font-size:10px;font-weight:500;color:#0369a1">In Progress</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0">
+                <div style="display:flex;align-items:center;gap:6px">
+                  <div style="width:7px;height:7px;border-radius:50%;background:#d1d5db"></div>
+                  <span style="font-size:10px;color:#9ca3af">SAT &amp; COD</span>
+                </div>
+                <span style="font-size:10px;color:#9ca3af">Q3 2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <nav class="footer-nav">
-        <a href="/">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-    </div>
-  </footer>
 
-  <script src="/assets/js/main.js" defer></script>
+      <!-- Phone / schedule view -->
+      <div style="width:18%;flex-shrink:0;border-radius:22px;overflow:hidden;border:3px solid #1e293b;box-shadow:0 8px 32px rgba(0,0,0,0.28);background:#030f1e">
+        <div style="display:flex;justify-content:center;padding:7px 0 3px">
+          <div style="width:48px;height:13px;background:#0f172a;border-radius:10px"></div>
+        </div>
+        <div style="padding:8px 10px 14px">
+          <div style="font-size:9px;color:#38bdf8;margin-bottom:6px;text-align:center;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">KLOKWYS</div>
+          <div style="border-radius:9px;padding:10px;margin-bottom:8px;background:linear-gradient(135deg,#0c4a6e,#0369a1)">
+            <div style="font-size:8px;color:#bae6fd;margin-bottom:2px">Project Health</div>
+            <div style="font-size:15px;font-weight:700;color:white">Active</div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;padding:3px 0">
+              <span style="font-size:9px;color:#6b7280">Schedule</span>
+              <span style="font-size:9px;color:#4ade80;font-weight:500">On Time</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:3px 0">
+              <span style="font-size:9px;color:#6b7280">LTI</span>
+              <span style="font-size:9px;color:#4ade80;font-weight:500">0</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:3px 0">
+              <span style="font-size:9px;color:#6b7280">Budget</span>
+              <span style="font-size:9px;color:#38bdf8;font-weight:500">±2%</span>
+            </div>
+          </div>
+          <div style="margin-top:8px;border-radius:8px;padding:8px;background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.2)">
+            <div style="font-size:8px;color:#38bdf8;font-weight:600;margin-bottom:3px">Next Gate</div>
+            <div style="font-size:9px;color:#e2e8f0">SAT Review<br>Jul 14</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pipeline stats strip -->
+    <div class="mt-16 text-center">
+      <p class="text-xs text-gray-400 mb-6 font-medium uppercase tracking-widest">Delivery track record</p>
+      <div class="flex items-center justify-center gap-12">
+        <div class="text-center">
+          <div class="stat-num">10+</div>
+          <p class="text-xs text-gray-500 mt-1">Years EPC Leadership</p>
+        </div>
+        <div class="w-px h-10 bg-gray-200"></div>
+        <div class="text-center">
+          <div class="stat-num">12</div>
+          <p class="text-xs text-gray-500 mt-1">Jurisdictions Delivered</p>
+        </div>
+        <div class="w-px h-10 bg-gray-200"></div>
+        <div class="text-center">
+          <div class="stat-num">0</div>
+          <p class="text-xs text-gray-500 mt-1">Lost-Time Incidents</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ DELIVERY FRAMEWORK ═══════════════════════ -->
+<section class="bg-white py-16" id="process">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <div class="text-center mb-14">
+      <p class="text-xs text-sky-500 font-semibold uppercase tracking-widest mb-2">How We Work</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-3">Klokwys Delivery Framework</h2>
+      <p class="text-sm text-gray-500 max-w-sm mx-auto leading-relaxed">
+        Gate-based execution from first scope to final handover. Every phase has defined acceptance criteria and a clear owner.
+      </p>
+    </div>
+
+    <!-- 8-stage grid -->
+    <div class="grid grid-cols-4 gap-x-6 gap-y-10">
+
+      <div class="text-center">
+        <div class="feature-blob" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe)">
+          <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+        <p class="text-xs font-semibold text-gray-700">01 — Discovery</p>
+        <p class="text-xs text-gray-400 mt-1 leading-snug">Site, scope &amp; constraints</p>
+      </div>
+
+      <div class="text-center">
+        <div class="feature-blob" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe)">
+          <svg class="w-5 h-5 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+          </svg>
+        </div>
+        <p class="text-xs font-semibold text-gray-700">02 — Concept</p>
+        <p class="text-xs text-gray-400 mt-1 leading-snug">Architecture &amp; options</p>
+      </div>
+
+      <div class="text-center">
+        <div class="feature-blob" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0)">
+          <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
+          </svg>
+        </div>
+        <p class="text-xs font-semibold text-gray-700">03 — Design</p>
+        <p class="text-xs text-gray-400 mt-1 leading-snug">Code-compliant engineering</p>
+      </div>
+
+      <div class="text-center">
+        <div class="feature-blob" style="background:linear-gradient(135deg,#fef3c7,#fde68a)">
+          <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <p class="text-xs font-semibold text-gray-700">04 — Procurement</p>
+        <p class="text-xs text-gray-400 mt-1 leading-snug">Validated OEMs &amp; supply</p>
+      </div>
+
+      <div class="text-center">
+        <div class="feature-blob" style="background:linear-gradient(135deg,#fee2e2,#fecaca)">
+          <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          </svg>
+        </div>
+        <p class="text-xs font-semibold text-gray-700">05 — Build</p>
+        <p class="text-xs text-gray-400 mt-1 leading-snug">Site execution &amp; safety</p>
+      </div>
+
+      <div class="text-center">
+        <div class="feature-blob" style="background:linear-gradient(135deg,#cffafe,#a5f3fc)">
+          <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <p class="text-xs font-semibold text-gray-700">06 — Test</p>
+        <p class="text-xs text-gray-400 mt-1 leading-snug">FAT, SAT &amp; commissioning</p>
+      </div>
+
+      <div class="text-center">
+        <div class="feature-blob" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0)">
+          <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <p class="text-xs font-semibold text-gray-700">07 — COD</p>
+        <p class="text-xs text-gray-400 mt-1 leading-snug">Commercial operation day</p>
+      </div>
+
+      <div class="text-center">
+        <div class="feature-blob" style="background:linear-gradient(135deg,#e0e7ff,#c7d2fe)">
+          <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+          </svg>
+        </div>
+        <p class="text-xs font-semibold text-gray-700">08 — Ongoing</p>
+        <p class="text-xs text-gray-400 mt-1 leading-snug">O&amp;M support &amp; reporting</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CORE PRINCIPLES ═══════════════════════ -->
+<section class="bg-white pt-16 pb-20" id="about">
+  <div class="max-w-3xl mx-auto px-6">
+
+    <div class="text-center mb-10">
+      <p class="text-xs text-sky-500 font-semibold uppercase tracking-widest mb-2">How We Think</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-3">Three principles that protect outcomes</h2>
+      <p class="text-sm text-gray-500 max-w-xs mx-auto leading-relaxed">
+        Every project runs on the same foundation — scope is set, schedules are real, and nothing is hidden.
+      </p>
+    </div>
+
+    <!-- Gap (intentional breathing room) -->
+    <div class="h-16"></div>
+
+    <div class="space-y-4">
+
+      <!-- Card 1 — Clarity First / dark navy -->
+      <div class="card-dark rounded-2xl p-8 relative overflow-hidden">
+        <div class="geo-lines absolute inset-0"></div>
+        <div class="relative z-10 flex items-start justify-between gap-8">
+          <div style="flex:1; max-width:360px">
+            <span style="display:inline-block;font-size:10px;background:#0ea5e9;color:white;padding:2px 10px;border-radius:999px;margin-bottom:14px;font-weight:500">Clarity First</span>
+            <h3 style="font-size:22px;font-weight:700;color:white;margin-bottom:12px;line-height:1.25">Scope set. Risks mapped.<br>Criteria agreed.</h3>
+            <p style="font-size:11px;color:#94a3b8;margin-bottom:20px;line-height:1.7">A single source of truth from day one. Change control discipline means surprises stay out of budgets and schedules.</p>
+            <div style="display:flex;gap:20px">
+              <div style="flex:1">
+                <div style="font-size:10px;color:#38bdf8;font-weight:600;margin-bottom:4px">Interface Register</div>
+                <p style="font-size:10px;color:#64748b;line-height:1.5">Every owner, every dependency, every acceptance criterion — documented and tracked.</p>
+              </div>
+              <div style="flex:1">
+                <div style="font-size:10px;color:#38bdf8;font-weight:600;margin-bottom:4px">Change Control</div>
+                <p style="font-size:10px;color:#64748b;line-height:1.5">No scope creep without formal review. Cost and schedule impacts quantified before approval.</p>
+              </div>
+            </div>
+          </div>
+          <div style="flex-shrink:0;align-self:flex-end">
+            <div style="width:56px;height:56px;border-radius:50%;background:rgba(14,165,233,0.15);border:1px solid rgba(14,165,233,0.3);display:flex;align-items:center;justify-content:center">
+              <svg style="width:26px;height:26px" fill="none" stroke="#38bdf8" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V19.5a2.25 2.25 0 002.25 2.25h.75"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 — Engineering Depth / teal -->
+      <div class="card-teal rounded-2xl p-8 relative overflow-hidden">
+        <div class="geo-lines absolute inset-0"></div>
+        <div class="relative z-10 flex items-start justify-between gap-8">
+          <div style="flex:1; max-width:360px">
+            <span style="display:inline-block;font-size:10px;background:rgba(255,255,255,0.2);color:white;padding:2px 10px;border-radius:999px;margin-bottom:14px;font-weight:500">Engineering Depth</span>
+            <h3 style="font-size:22px;font-weight:700;color:white;margin-bottom:12px;line-height:1.25">Code-compliant.<br>Safety-first architecture.</h3>
+            <p style="font-size:11px;color:#bae6fd;margin-bottom:20px;line-height:1.7">Protection systems, thermal and fire safety analysis, and commissioning plans engineered in — not bolted on.</p>
+            <div style="display:flex;gap:20px">
+              <div style="flex:1">
+                <div style="font-size:10px;color:#e0f2fe;font-weight:600;margin-bottom:4px">Protection &amp; Controls</div>
+                <p style="font-size:10px;color:#bae6fd;line-height:1.5">Relay settings, SCADA integration, and arc flash studies delivered with every project.</p>
+              </div>
+              <div style="flex:1">
+                <div style="font-size:10px;color:#e0f2fe;font-weight:600;margin-bottom:4px">Thermal &amp; Fire Safety</div>
+                <p style="font-size:10px;color:#bae6fd;line-height:1.5">NFPA 855-compliant cell chemistry selection and suppression system design.</p>
+              </div>
+            </div>
+          </div>
+          <div style="flex-shrink:0;align-self:flex-end">
+            <div style="display:flex;align-items:center;gap:6px">
+              <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.5)"></div>
+              <span style="color:rgba(255,255,255,0.8);font-size:12px;font-weight:700;letter-spacing:0.05em">KLOKWYS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ THIRD PRINCIPLE CALLOUT ═══════════════════════ -->
+<section class="bg-white py-8 border-t border-gray-100">
+  <div class="max-w-5xl mx-auto px-6">
+    <p class="text-center text-xs text-gray-400 mb-6 uppercase tracking-widest">Also foundational</p>
+    <div class="flex items-center justify-center gap-8 flex-nowrap">
+      <div class="flex items-center gap-2">
+        <div style="width:28px;height:28px;border-radius:8px;background:#f0fdf4;border:1px solid #bbf7d0;display:flex;align-items:center;justify-content:center">
+          <svg style="width:14px;height:14px;color:#059669" fill="none" stroke="#059669" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <span style="font-size:12px;font-weight:600;color:#374151">Schedule Integrity</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div style="width:28px;height:28px;border-radius:8px;background:#eff6ff;border:1px solid #bfdbfe;display:flex;align-items:center;justify-content:center">
+          <svg style="width:14px;height:14px" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+        </div>
+        <span style="font-size:12px;font-weight:600;color:#374151">Full Transparency</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div style="width:28px;height:28px;border-radius:8px;background:#fff7ed;border:1px solid #fed7aa;display:flex;align-items:center;justify-content:center">
+          <svg style="width:14px;height:14px" fill="none" stroke="#ea580c" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <span style="font-size:12px;font-weight:600;color:#374151">Risk Registers</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div style="width:28px;height:28px;border-radius:8px;background:#faf5ff;border:1px solid #e9d5ff;display:flex;align-items:center;justify-content:center">
+          <svg style="width:14px;height:14px" fill="none" stroke="#7c3aed" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <span style="font-size:12px;font-weight:600;color:#374151">Field Experience</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div style="width:28px;height:28px;border-radius:8px;background:#f0fdf4;border:1px solid #bbf7d0;display:flex;align-items:center;justify-content:center">
+          <svg style="width:14px;height:14px" fill="none" stroke="#16a34a" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <span style="font-size:12px;font-weight:600;color:#374151">12 Jurisdictions</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Spacer -->
+<div style="height:40px;background:white"></div>
+
+<!-- ═══════════════════════ ABOUT / TEAM ═══════════════════════ -->
+<section class="bg-white py-16">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <p class="text-xs text-sky-500 font-semibold uppercase tracking-widest mb-2">The Team</p>
+      <h2 class="text-2xl font-bold text-gray-900 mb-3 leading-snug">Built by people who've<br>delivered in the field</h2>
+      <p class="text-sm text-gray-500 max-w-sm mx-auto leading-relaxed">Our team combines EPC program management, electrical engineering, and site construction leadership — all with real project hours behind them.</p>
+    </div>
+
+    <div class="grid grid-cols-3 gap-10">
+
+      <div>
+        <div style="width:44px;height:44px;border-radius:12px;background:#f0f9ff;border:1px solid #bae6fd;display:flex;align-items:center;justify-content:center;margin-bottom:12px">
+          <svg style="width:22px;height:22px" fill="none" stroke="#0369a1" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V19.5a2.25 2.25 0 002.25 2.25h.75"/>
+          </svg>
+        </div>
+        <h3 class="text-sm font-bold text-gray-900 mb-2">Project Delivery</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Field-experienced program managers who've run gate-based schedules from LNTP to COD across multiple jurisdictions and utility interconnects.</p>
+      </div>
+
+      <div>
+        <div style="width:44px;height:44px;border-radius:12px;background:#f0fdf4;border:1px solid #bbf7d0;display:flex;align-items:center;justify-content:center;margin-bottom:12px">
+          <svg style="width:22px;height:22px" fill="none" stroke="#059669" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+          </svg>
+        </div>
+        <h3 class="text-sm font-bold text-gray-900 mb-2">Electrical Engineering</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Protection relay settings, SCADA integration, power flow studies, and arc flash analysis — delivered to IEC and IEEE standards with full documentation.</p>
+      </div>
+
+      <div>
+        <div style="width:44px;height:44px;border-radius:12px;background:#fff7ed;border:1px solid #fed7aa;display:flex;align-items:center;justify-content:center;margin-bottom:12px">
+          <svg style="width:22px;height:22px" fill="none" stroke="#ea580c" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/>
+          </svg>
+        </div>
+        <h3 class="text-sm font-bold text-gray-900 mb-2">Construction Leadership</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Site execution focused on safety, quality hold points, and schedule accountability. Zero LTI record maintained across all active projects.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CONTACT CTA (DARK) ═══════════════════════ -->
+<section style="background:#000d1a;color:white;padding:88px 24px;text-align:center;position:relative;overflow:hidden" id="contact">
+  <div style="max-width:560px;margin:0 auto">
+    <p style="font-size:11px;color:#38bdf8;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:16px">Get Started</p>
+    <h2 style="font-size:26px;font-weight:700;margin-bottom:12px;line-height:1.3">Battery Energy Storage<br>Done Right</h2>
+    <p style="font-size:13px;color:#94a3b8;margin-bottom:10px;max-width:300px;margin-left:auto;margin-right:auto;line-height:1.7">
+      Send scope and constraints for a clear path to interconnection and COD.
+    </p>
+    <p style="font-size:11px;color:#475569;margin-bottom:32px;max-width:360px;margin-left:auto;margin-right:auto;line-height:1.6">
+      Include: site location, interconnect details, target COD, use case, capacity specs, and any known constraints or risks.
+    </p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">
+      <a href="mailto:info@klokwys.com" style="display:inline-flex;align-items:center;gap:7px;background:#0ea5e9;color:white;font-size:12px;font-weight:600;padding:11px 22px;border-radius:999px;text-decoration:none">
+        <svg style="width:13px;height:13px" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+        info@klokwys.com
+      </a>
+      <a href="https://linkedin.com" target="_blank" style="display:inline-flex;align-items:center;gap:7px;color:white;font-size:12px;font-weight:500;padding:11px 18px;border-radius:999px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.05);text-decoration:none">
+        <svg style="width:13px;height:13px" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        LinkedIn
+      </a>
+    </div>
+
+    <!-- Newsletter form -->
+    <div style="border-top:1px solid rgba(255,255,255,0.08);margin-top:40px;padding-top:32px">
+      <p style="font-size:11px;color:#38bdf8;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:6px">Stay Updated</p>
+      <p style="font-size:12px;color:#94a3b8;margin-bottom:20px">Get project insights and industry news.</p>
+      <form action="#" method="post" style="display:flex;flex-direction:column;gap:10px;max-width:360px;margin:0 auto">
+        <input type="text" name="firstname" placeholder="First name" required
+          style="background:#0a1628;border:1px solid rgba(255,255,255,0.1);color:white;font-size:12px;padding:11px 18px;border-radius:999px;outline:none;width:100%;box-sizing:border-box" />
+        <div style="display:flex;gap:8px">
+          <input type="email" name="email" placeholder="Email address" required
+            style="background:#0a1628;border:1px solid rgba(255,255,255,0.1);color:white;font-size:12px;padding:11px 18px;border-radius:999px;outline:none;flex:1;min-width:0;box-sizing:border-box" />
+          <button type="submit"
+            style="background:#0ea5e9;color:white;font-size:12px;font-weight:600;padding:11px 22px;border-radius:999px;border:none;cursor:pointer;white-space:nowrap">
+            Go
+          </button>
+        </div>
+        <p style="font-size:10px;color:#475569;margin-top:4px">No spam. Unsubscribe anytime.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Wave animation overlay -->
+  <div class="contact-wave-wrap">
+    <svg class="contact-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#38bdf8" d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"/>
+      <path fill="#38bdf8" d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" transform="translate(720,0)"/>
+    </svg>
+    <svg class="contact-wave-2" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#7dd3fc" d="M0,55 C360,10 720,70 1080,30 C1260,10 1380,50 1440,55 L1440,80 L0,80 Z"/>
+      <path fill="#7dd3fc" d="M0,55 C360,10 720,70 1080,30 C1260,10 1380,50 1440,55 L1440,80 L0,80 Z" transform="translate(720,0)"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer style="background:#020912;color:white;padding:52px 24px">
+  <div style="max-width:1152px;margin:0 auto">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap">
+
+      <div style="max-width:260px">
+        <div style="font-size:18px;font-weight:700;margin-bottom:10px;color:#f1f5f9">klokwys</div>
+        <p style="font-size:11px;color:#475569;line-height:1.7">
+          Reliable engineering, disciplined execution, and energy systems that perform every cycle.
+        </p>
+        <p style="font-size:10px;color:#334155;margin-top:12px">info@klokwys.com</p>
+      </div>
+
+      <div style="display:flex;gap:60px;flex-wrap:wrap">
+        <div>
+          <h4 style="font-size:10px;font-weight:600;color:#475569;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px">Services</h4>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px">
+            <li><a href="#" style="font-size:11px;color:#374151;text-decoration:none">Battery Energy Storage</a></li>
+            <li><a href="#" style="font-size:11px;color:#374151;text-decoration:none">Project Delivery</a></li>
+            <li><a href="#" style="font-size:11px;color:#374151;text-decoration:none">Commercial Clarity</a></li>
+            <li><a href="#" style="font-size:11px;color:#374151;text-decoration:none">Engineering Studies</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:10px;font-weight:600;color:#475569;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px">Company</h4>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px">
+            <li><a href="#about" style="font-size:11px;color:#374151;text-decoration:none">About</a></li>
+            <li><a href="#process" style="font-size:11px;color:#374151;text-decoration:none">Process</a></li>
+            <li><a href="#contact" style="font-size:11px;color:#374151;text-decoration:none">Contact</a></li>
+            <li><a href="https://linkedin.com" style="font-size:11px;color:#374151;text-decoration:none">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;padding-top:20px;border-top:1px solid #0f172a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+      <p style="font-size:10px;color:#1e293b">© Klokwys. All rights reserved.</p>
+      <div style="display:flex;gap:14px">
+        <a href="#" style="font-size:10px;color:#1e293b;text-decoration:none">Privacy</a>
+        <a href="#" style="font-size:10px;color:#1e293b;text-decoration:none">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
