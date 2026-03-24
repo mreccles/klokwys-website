@@ -295,10 +295,10 @@
     </div>
 
     <!-- Three service panels + visual -->
-    <div class="relative flex items-end justify-center gap-5">
+    <div class="relative flex flex-col md:flex-row items-center md:items-end justify-center gap-5">
 
       <!-- Left floating equipment images -->
-      <div style="position:absolute; left:-10px; bottom:20px; z-index:10">
+      <div class="hidden md:block" style="position:absolute; left:-10px; bottom:20px; z-index:10">
         <!-- BESS container box -->
         <div style="width:120px; height:75px; border-radius:12px;
           background:linear-gradient(135deg,#0c4a6e,#0369a1);
@@ -324,7 +324,7 @@
       </div>
 
       <!-- Main services panel (browser-style) -->
-      <div style="width:62%; border-radius:12px; overflow:hidden; border:1px solid #e5e7eb; box-shadow:0 4px 24px rgba(0,0,0,0.07)">
+      <div class="w-full md:w-[62%]" style="border-radius:12px; overflow:hidden; border:1px solid #e5e7eb; box-shadow:0 4px 24px rgba(0,0,0,0.07)">
         <!-- Chrome -->
         <div style="background:#f3f4f6; padding:8px 12px; display:flex; align-items:center; gap:8px; border-bottom:1px solid #e5e7eb">
           <div style="display:flex; gap:6px">
@@ -413,33 +413,33 @@
       </div>
 
       <!-- Phone / schedule view -->
-      <div style="width:18%;flex-shrink:0;border-radius:22px;overflow:hidden;border:3px solid #1e293b;box-shadow:0 8px 32px rgba(0,0,0,0.28);background:#030f1e">
+      <div class="w-40 md:w-[18%] flex-shrink-0" style="border-radius:22px;overflow:hidden;border:3px solid #1e293b;box-shadow:0 8px 32px rgba(0,0,0,0.28);background:#030f1e">
         <div style="display:flex;justify-content:center;padding:7px 0 3px">
           <div style="width:48px;height:13px;background:#0f172a;border-radius:10px"></div>
         </div>
         <div style="padding:8px 10px 14px">
-          <div style="font-size:9px;color:#38bdf8;margin-bottom:6px;text-align:center;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">KLOKWYS</div>
+          <div style="font-size:10px;color:#38bdf8;margin-bottom:6px;text-align:center;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">KLOKWYS</div>
           <div style="border-radius:9px;padding:10px;margin-bottom:8px;background:linear-gradient(135deg,#0c4a6e,#0369a1)">
-            <div style="font-size:8px;color:#bae6fd;margin-bottom:2px">Project Health</div>
-            <div style="font-size:15px;font-weight:700;color:white">Active</div>
+            <div style="font-size:9px;color:#bae6fd;margin-bottom:2px">Project Health</div>
+            <div style="font-size:16px;font-weight:700;color:white">Active</div>
           </div>
           <div>
-            <div style="display:flex;justify-content:space-between;padding:3px 0">
-              <span style="font-size:9px;color:#6b7280">Schedule</span>
-              <span style="font-size:9px;color:#4ade80;font-weight:500">On Time</span>
+            <div style="display:flex;justify-content:space-between;padding:4px 0">
+              <span style="font-size:10px;color:#6b7280">Schedule</span>
+              <span style="font-size:10px;color:#4ade80;font-weight:500">On Time</span>
             </div>
-            <div style="display:flex;justify-content:space-between;padding:3px 0">
-              <span style="font-size:9px;color:#6b7280">LTI</span>
-              <span style="font-size:9px;color:#4ade80;font-weight:500">0</span>
+            <div style="display:flex;justify-content:space-between;padding:4px 0">
+              <span style="font-size:10px;color:#6b7280">LTI</span>
+              <span style="font-size:10px;color:#4ade80;font-weight:500">0</span>
             </div>
-            <div style="display:flex;justify-content:space-between;padding:3px 0">
-              <span style="font-size:9px;color:#6b7280">Budget</span>
-              <span style="font-size:9px;color:#38bdf8;font-weight:500">±2%</span>
+            <div style="display:flex;justify-content:space-between;padding:4px 0">
+              <span style="font-size:10px;color:#6b7280">Budget</span>
+              <span style="font-size:10px;color:#38bdf8;font-weight:500">±2%</span>
             </div>
           </div>
           <div style="margin-top:8px;border-radius:8px;padding:8px;background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.2)">
-            <div style="font-size:8px;color:#38bdf8;font-weight:600;margin-bottom:3px">Next Gate</div>
-            <div style="font-size:9px;color:#e2e8f0">SAT Review<br>Jul 14</div>
+            <div style="font-size:9px;color:#38bdf8;font-weight:600;margin-bottom:3px">Next Gate</div>
+            <div style="font-size:10px;color:#e2e8f0">SAT Review<br>Jul 14</div>
           </div>
         </div>
       </div>
@@ -447,22 +447,22 @@
     </div>
 
     <!-- Pipeline stats strip -->
-    <div class="mt-16 text-center">
+    <div class="mt-16 text-center px-4">
       <p class="text-xs text-gray-400 mb-6 font-medium uppercase tracking-widest">Delivery track record</p>
-      <div class="flex items-center justify-center gap-12">
-        <div class="text-center">
+      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 md:gap-12">
+        <div class="text-center min-w-[80px]">
           <div class="stat-num">10+</div>
-          <p class="text-xs text-gray-500 mt-1">Years EPC Leadership</p>
+          <p class="text-xs text-gray-500 mt-1">Years EPC<br>Leadership</p>
         </div>
-        <div class="w-px h-10 bg-gray-200"></div>
-        <div class="text-center">
+        <div class="hidden md:block w-px h-10 bg-gray-200"></div>
+        <div class="text-center min-w-[80px]">
           <div class="stat-num">12</div>
-          <p class="text-xs text-gray-500 mt-1">Jurisdictions Delivered</p>
+          <p class="text-xs text-gray-500 mt-1">Jurisdictions<br>Delivered</p>
         </div>
-        <div class="w-px h-10 bg-gray-200"></div>
-        <div class="text-center">
+        <div class="hidden md:block w-px h-10 bg-gray-200"></div>
+        <div class="text-center min-w-[80px]">
           <div class="stat-num">0</div>
-          <p class="text-xs text-gray-500 mt-1">Lost-Time Incidents</p>
+          <p class="text-xs text-gray-500 mt-1">Lost-Time<br>Incidents</p>
         </div>
       </div>
     </div>
